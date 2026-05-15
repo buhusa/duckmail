@@ -23,6 +23,13 @@ Authorization: Bearer <token>
 
 That endpoint is not a formally documented public API, so it can change.
 
+## Requirements
+
+- Python 3.8+.
+- A DuckDuckGo Email Protection account and bearer token.
+- macOS only if you want to use `DuckMail.app`; the CLI works anywhere Python
+  does.
+
 ## Security note
 
 - Your DuckDuckGo Email Protection bearer token is stored only on your machine.
@@ -60,8 +67,8 @@ Treat the token like a password.
 ### macOS app menu
 
 Double-click `DuckMail.app` to open the duckmail menu in Terminal. The app bundle
-is a lightweight launcher: it starts `DuckMail Menu.command`, changes into the
-project folder, and runs `./duckmail.py`.
+is a lightweight launcher: it opens Terminal, changes into the project folder,
+and runs `./duckmail.py`.
 
 The app does not run a background service and does not store anything outside
 the local duckmail config file.
