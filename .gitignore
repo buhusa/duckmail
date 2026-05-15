@@ -1,0 +1,5 @@
+.duckmail/
+__pycache__/
+*.pyc
+.DS_Store
+DuckMail Menu.command

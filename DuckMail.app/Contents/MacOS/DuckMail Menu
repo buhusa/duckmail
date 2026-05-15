@@ -1,0 +1,17 @@
+#!/bin/zsh
+set -u
+
+APP_DIR="${0:A:h:h:h}"
+PROJECT_DIR="${APP_DIR:h}"
+COMMAND_FILE="$PROJECT_DIR/DuckMail Menu.command"
+
+if [[ -x "$COMMAND_FILE" ]]; then
+  open -a Terminal "$COMMAND_FILE"
+else
+  osascript <<APPLESCRIPT
+tell application "Terminal"
+  activate
+  do script "cd ${PROJECT_DIR:q} && ./duckmail.py"
+end tell
+APPLESCRIPT
+fi
