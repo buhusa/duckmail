@@ -30,6 +30,19 @@ That endpoint is not a formally documented public API, so it can change.
 - macOS only if you want to use `DuckMail.app`; the CLI works anywhere Python
   does.
 
+## Installation
+
+Clone the repo and run the CLI:
+
+```sh
+git clone https://github.com/buhusa/duckmail.git
+cd duckmail
+./duckmail.py
+```
+
+On macOS, you can also download the ZIP from GitHub, unzip it, and double-click
+`DuckMail.app`.
+
 ## Security note
 
 - Your DuckDuckGo Email Protection bearer token is stored only on your machine.
