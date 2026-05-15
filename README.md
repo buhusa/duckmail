@@ -2,15 +2,15 @@
 
 Small terminal helper for DuckDuckGo Email Protection private addresses.
 
-![duckmail terminal demo](docs/demo.gif)
+![DuckMail.app opening the duckmail terminal menu](docs/demo.gif)
 
 ## Why I built this
 
 I use DuckDuckGo Email Protection and wanted a faster way to generate private
-`duck.com` addresses from the terminal, with local labels like `github`,
-`banking`, or `newsletters`. DuckDuckGo's apps and browser extensions already
-generate private addresses; duckmail is a small helper for people who prefer a
-local CLI workflow and want to remember which address was used where.
+`duck.com` addresses, with local labels like `github`, `banking`, or
+`newsletters`. DuckDuckGo's apps and browser extensions already generate private
+addresses; duckmail is a small helper for people who prefer a local workflow and
+want to remember which address was used where.
 
 DuckDuckGo documents generating Private Duck Addresses through their apps,
 browser extensions, and Email Protection settings. This tool uses the same
@@ -57,7 +57,16 @@ Treat the token like a password.
 
 ## Usage
 
-On macOS, double-click `DuckMail.app` to open the interactive menu in Terminal.
+### macOS app menu
+
+Double-click `DuckMail.app` to open the duckmail menu in Terminal. The app bundle
+is a lightweight launcher: it starts `DuckMail Menu.command`, changes into the
+project folder, and runs `./duckmail.py`.
+
+The app does not run a background service and does not store anything outside
+the local duckmail config file.
+
+### Terminal menu
 
 Run the interactive menu:
 
@@ -67,6 +76,8 @@ Run the interactive menu:
 
 The interactive menu redraws in place after each action, so the terminal does
 not keep scrolling while you use it.
+
+### Commands
 
 Generate a new address:
 
