@@ -2,6 +2,16 @@
 
 Small terminal helper for DuckDuckGo Email Protection private addresses.
 
+![duckmail terminal demo](docs/demo.gif)
+
+## Why I built this
+
+I use DuckDuckGo Email Protection and wanted a faster way to generate private
+`duck.com` addresses from the terminal, with local labels like `github`,
+`banking`, or `newsletters`. DuckDuckGo's apps and browser extensions already
+generate private addresses; duckmail is a small helper for people who prefer a
+local CLI workflow and want to remember which address was used where.
+
 DuckDuckGo documents generating Private Duck Addresses through their apps,
 browser extensions, and Email Protection settings. This tool uses the same
 network endpoint that those clients use:
@@ -12,6 +22,21 @@ Authorization: Bearer <token>
 ```
 
 That endpoint is not a formally documented public API, so it can change.
+
+## Security note
+
+- Your DuckDuckGo Email Protection bearer token is stored only on your machine.
+- By default it is written to `.duckmail/config.json` inside the project folder.
+- The config file is saved with file mode `0600` so only your local user can
+  read it.
+- Treat the bearer token like a password. Anyone with the token may be able to
+  generate private Duck Addresses for your account.
+- duckmail uses an internal DuckDuckGo endpoint observed from DuckDuckGo's own
+  clients. It is not an official public API and may change or stop working
+  without notice.
+- Address history and labels are local only. DuckDuckGo does not provide a
+  stable dashboard/API for listing every generated Private Duck Address, so keep
+  your config backed up if you rely on those labels.
 
 ## Setup
 
@@ -108,9 +133,7 @@ Use a custom config path:
 ./duckmail.py new --config /path/to/config.json
 ```
 
-History is stored locally in the same config file. DuckDuckGo does not provide a
-stable dashboard/API for listing every generated Private Duck Address, so keep
-this file backed up if you rely on the labels. Timestamps are shown in local
+History is stored locally in the same config file. Timestamps are shown in local
 time as `YYYY-MM-DD at HH:MM`.
 
 ## Author
